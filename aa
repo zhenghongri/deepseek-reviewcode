@@ -1,0 +1,57 @@
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ExeTest {
+    public static void main(String[] args) {
+
+        Calendar calendar1 = Calendar.getInstance();
+        /**
+         * 1:星期天
+         * 2:星期一
+         * 7:星期六
+         */
+        int index = calendar1.
+                get(Calendar.DAY_OF_WEEK);
+        int weekVersionIndex = 3;
+
+        int plusDay = index > weekVersionIndex  ? (
+                7 - index + Integer.valueOf(weekVersionIndex) + 1) : -index + Integer.valueOf(weekVersionIndex) + 1;
+        calendar1.add(Calendar.DAY_OF_YEAR, plusDay);
+        System.out.println("index:" + index + ", plusDay: " + plusDay + "," + calendar1.getTime());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(sdf.format(calendar1.getTime()));
+
+
+        System.out.println(Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
+        Boolean is = true;
+        System.out.println("ssssssssssssssss exe test" + is);
+        if (is) {
+            System.out.println("True");
+        } else {
+            System.out.println("false");
+        }
+    }
+
+
+//    public static List<String> intersection(List<String> list1, List<String> list2) {
+//        final List<String> localList1 = list1;
+//        final List<String> localList2 = list2;
+//
+//        return localList1.stream()
+//                .filter(item -> localList2.contains(item))
+//                .collect(Collectors.toList());
+//    }
+
+    public static <T> List<T> intersection(List<T> list1, List<T> list2) {
+        final List<? extends T> localList1 = list1;
+        final List<? extends T> localList2 = list2;
+
+        return localList1.stream()
+                .filter(item -> localList2.contains(item))
+                .collect(Collectors.toList());
+    }
+
+}
