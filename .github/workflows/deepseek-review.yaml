@@ -26,7 +26,7 @@ jobs:
           # model: 'deepseek-ai/DeepSeek-R1'                  # SiliconFlow's DeepSeek R1 model
           # base-url: 'https://api.siliconflow.cn/v1'         # SiliconFlow's API base URL
           # Store the chat token in GitHub Secrets, don't expose it in the workflow file
-          chat-token: sk-912721c3ef0540e7a7615e430c33e709
+          chat-token: ${{ secrets.CHAT_KEY }}
           sys-prompt: >
             As a senior Nushell engineer, perform comprehensive script review with focus on:
 
