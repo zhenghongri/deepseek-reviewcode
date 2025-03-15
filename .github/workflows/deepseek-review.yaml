@@ -16,7 +16,7 @@ jobs:
       - name: DeepSeek Code Review
         uses: hustcer/deepseek-review@v1
         with:
-          max-length: 0
+          max-length: 100000
           model: 'deepseek-v3'                            # Infinigence's DeepSeek V3 model
           chat-token: ${{ secrets.CHAT_KEY }}
           sys-prompt: >
