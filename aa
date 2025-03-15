@@ -31,6 +31,8 @@ public class ExeTest {
         Boolean is = true;
         System.out.println("ssssssssssssssss exe test" + is);
         System.out.println("ssssssssssssssss exe test" + is);
+        System.out.println("ssssssssssssssss exe test" + is);
+        System.out.println("ssssssssssssssss exe test" + is);
         if (is) {
             System.out.println("True");
         } else {
